@@ -44,6 +44,10 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 <!-- Main -->
 <section id="main" class="wrapper">
 <div class="container">
+
+<form action="">
+    <input type="text" name="username" id="username"/>
+</form>
  
 <header class="major">
 <h2>Log in</h2>
