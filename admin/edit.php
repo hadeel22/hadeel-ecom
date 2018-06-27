@@ -1,5 +1,4 @@
 <?php
-      header('Location: addproduct.php'); 
        require_once('MysqliDb.php');
        $config = include('config.php');
        
@@ -12,7 +11,6 @@
        $des=$_POST['des'];
        $cat=$_POST['cat'];
        $qun=$_POST['qun'];
-        echo $_POST['price']; 
 	
         
         
@@ -46,9 +44,7 @@
                   "des" =>  "$des",
                   "cat" =>  "$cat",
                   "qun" =>  "$qun");
-$id = $db->insert ('product', $data);
+$id = $db->update ('product', $data);
 
 
-
-
-       ?>
+?>

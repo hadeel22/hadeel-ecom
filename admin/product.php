@@ -90,6 +90,8 @@ foreach ($products as $product) {
 	echo "<td>" . $product["price"] . "</td>";
 	echo "<td>" . $product["qun"]  . "</td>";
 	echo "<td>" . $product["cat"]  . "</td>";
+	echo "<td>  <p><a href=delete.php>Delete</a></p></td> " ;
+	 echo "<td>  <p><a href=editproduct.php> Edit product</a></p>      </td> " ;
 
 }
 

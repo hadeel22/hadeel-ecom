@@ -44,7 +44,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 
 
 
-                 <form action="prodcutform.php"  method="post" enctype="multipart/form-data">
+                 <form action="edit.php"  method="post" enctype="multipart/form-data">
   
 
   <div class="container">
