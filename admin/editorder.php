@@ -23,7 +23,6 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 </noscript>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-
 <body>
 
 
@@ -40,36 +39,24 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 						<h2>Add Product:</h2>
 						 -->
 					</header>
-					<h3>Edit Product information:</h3>
+					<h3>Edit order:</h3>
 
 
 
-                 <form action="edit.php"  method="post" enctype="multipart/form-data">
+                 <form action="edittt.php"  method="post" enctype="multipart/form-data">
   
 
   <div class="container">
-    <label for="name"><b>Name</b></label>
-    <input type="text" placeholder="Enter Name" name="pname" required>
+    <label for="status"><b>Status</b></label>
+    <select>
+  <option value="shipping">Shipping</option>
+  <option value="pending">Pending</option>
+ 
+</select>
 
-    <label for="pr"><b>Price</b></label>
-    <input type="text" placeholder="Enter Price" name="price" required>
-        
-    <label for="des"><b>Description</b></label>
-    <input type="text" placeholder="Enter Description" name="des" required>
-
-     <label for="des"><b>Category</b></label>
-    <input type="text" placeholder="Enter Category" name="cat" required>
-
-     <label for="des"><b>Quantity</b></label>
-    <input type="text" placeholder="Enter Quantity" name="qun" required>
-   
-   <label for="img" > <b> Image</b> </label>
-   <input type="file" name="file" id="file">
-
-
-    <input type="submit" name="Change" value="Edit">
-    
-  </div>
+<br>
+     <input type="submit" name="submit" value="Edit"> 
+   </div>
 
   <div class="container" style="background-color:#f1f1f1">
    

@@ -20,6 +20,10 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 <link rel="stylesheet" href="css/skel.css" />
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/style-xlarge.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </noscript>
 </head>
 
@@ -41,32 +45,24 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 </nav>
 </header>
 <header class="major">
-<h2>List of Categories</h2>
+<h2>List of Orders</h2>
 
-  <div class="4u 12u$(small)">
-  <a href="addcategory.php">
-								<img src="images/add.png" style="width:100px;height:90px; " >
-								<h5>Add category</h5>
-                            
-								</a>
-					   
-					   
-								
-							
-						
-						
-					
-					   
-								
-							
-						
-						</div>
+  
 </header>
 
-<table>
+<div data-role="page" id="pageone">
+  
+  
+  <div data-role="main" class="ui-content">
+    <form>
+      <input id="filterTable-input" data-type="search" placeholder="Search For status...">
+    </form>
+    
+<table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable" data-filter="true" data-input="#filterTable-input">
 
 <tr>
-<th> Name </th>
+<th> Product </th>
+<th> Status </th>
 <th colspan='2'>    More options</th>
 </tr>
 
@@ -76,17 +72,19 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
   
   $db = new MysqliDb($config['db_host'],$config['db_user'],$config['db_pass'],$config['db_name'] );
   
-  $categories = $db->get('category', 10); //contains an Array 10 users
+  $order = $db->get('orders', 50); //contains an Array 10 users
 
-  foreach ($categories as $category) {
+  foreach ($order as $orders) {
 
 	echo "<tr>";
-    echo "<td>" . $category["cname"] . "</td>";
-    echo "<td>  <p><a href=del.php>Delete</a></p></td> " ;
-     echo "<td>  <p><a href=editcategory.php> Edit product</a></p>      </td> " ;
+    echo "<td>" . $orders["product"] . "</td>";
+    echo "<td>" . $orders["status"] . "</td>";
+    echo "<td>  <p><a href=deleteorder.php>Delete</a></p></td> " ;
+     echo "<td>  <p><a href=editorder.php> Edit order</a></p>      </td> " ;
   }
      ?>
 
      </table>
+
      </body>
      </html>
