@@ -31,21 +31,22 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 <!-- Header -->
 <header id="header">
 <h1><a>Hadeel E-commerce</a></h1>
-<nav id="nav">
-<ul>
 
 
-
-            
-</ul>
-</nav>
 </header>
 <header class="major">
 <h2>List of Products</h2>
-
-  <div class="4u 12u$(small)">
+<div class="w3-bar w3-border w3-light-grey" align="left">
+  <a href="dashboard.php" class="w3-bar-item w3-button">Home</a>
+  </br>
+  <a href="category.php" class="w3-bar-item w3-button">Category</a>
+  </br>
+  <a href="order.php" class="w3-bar-item w3-button">Order</a>
+  
+</div>
+  <div class="4u 12u$(small)" align="middle">
   <a href="addproduct.php">
-								<img src="images/add.png" style="width:100px;height:90px; " >
+								<img src="images/add.png" style="width:100px;height:90px;  "  >
 								<h5>Add products</h5>
                             
 								</a>

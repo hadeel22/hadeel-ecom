@@ -10,5 +10,5 @@
        $status=$_POST['status'];}
 
        $data = Array ("status" => "$status");
-$id = $db->insert ('order', $data);
+$id = $db->update ('order', $data);
 ?>

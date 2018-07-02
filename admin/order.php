@@ -27,8 +27,8 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 </noscript>
 </head>
 
-<body>
 
+<body>
 
  
 <!-- Main -->
@@ -46,6 +46,15 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 </header>
 <header class="major">
 <h2>List of Orders</h2>
+ 
+<div class="w3-bar w3-border w3-light-grey" align="left">
+  <a href="dashboard.php" class="w3-bar-item w3-button">Home</a>
+</br>
+  <a href="product.php" class="w3-bar-item w3-button">Product</a>
+  </br>
+  <a href="category.php" class="w3-bar-item w3-button">Category</a>
+  
+</div>
 
   
 </header>
@@ -55,14 +64,17 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
   
   <div data-role="main" class="ui-content">
     <form>
-      <input id="filterTable-input" data-type="search" placeholder="Search For status...">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Status..">
     </form>
     
-<table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable" data-filter="true" data-input="#filterTable-input">
+<table id="myTable">
 
 <tr>
-<th> Product </th>
 <th> Status </th>
+<th> User </th>
+<th> Date </th>
+<th> Total price </th>
+
 <th colspan='2'>    More options</th>
 </tr>
 
@@ -77,14 +89,38 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
   foreach ($order as $orders) {
 
 	echo "<tr>";
-    echo "<td>" . $orders["product"] . "</td>";
     echo "<td>" . $orders["status"] . "</td>";
+    echo "<td>" . $orders["userId"] . "</td>";
+    echo "<td>" . $orders["date"] . "</td>";
+    echo "<td>" . $orders["totprice"] . "</td>";
     echo "<td>  <p><a href=deleteorder.php>Delete</a></p></td> " ;
      echo "<td>  <p><a href=editorder.php> Edit order</a></p>      </td> " ;
+     echo "</tr>";
+
   }
      ?>
 
      </table>
+     <script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
 
      </body>
      </html>
