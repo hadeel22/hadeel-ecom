@@ -21,39 +21,33 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/style-xlarge.css" />
 </noscript>
-<style>
-        .button {
-            background-color: rgb(97, 11, 146);
-            border: none;
-            color: white;
-            padding: 10px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 30px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-        </style>
+
 </head>
 
 <body>
 
-
- 
-<!-- Main -->
-<!-- Header -->
 <header id="header">
 <h1><a>Hadeel E-commerce</a></h1>
 
 </header>
 </br>
 <header class="major">
-<h2>Welcome to Hadeel E-commerce</h2>
-</br>
-</br>
-<a href="userlog.php" class="button">Log In</a>
-<a href="usereg.php" class="button">Register</a>
+<?php
+require_once('MysqliDb.php');
+$config = include('config.php');
 
-</body>
-</html>
+$db = new MysqliDb($config['db_host'],$config['db_user'],$config['db_pass'],$config['db_name'] );
+
+
+$products = $db->get('product', 10);
+foreach ($products as $product) {
+echo "<h2> $product[pname] </h2>";
+echo "</br>";
+
+echo "<div style=background-color:white;color:black;padding:20px ; align=left;>";
+echo "<h4> Details: </h4>";
+echo "<p> $product[des] </p>";
+echo "</div>";
+}
+?>
+

@@ -45,6 +45,7 @@
                   "price" =>  "$price",
                   "des" =>  "$des",
                   "cat" =>  "$cat",
+                  "img"=> "$name",
                   "qun" =>  "$qun");
 $id = $db->insert ('product', $data);
 

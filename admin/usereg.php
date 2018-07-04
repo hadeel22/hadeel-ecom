@@ -1,3 +1,12 @@
+<?php
+
+if($_GET['err']){
+    echo 'error registering';
+}
+
+
+?>
+
 <!DOCTYPE html>
 <!--
 Transit by TEMPLATED

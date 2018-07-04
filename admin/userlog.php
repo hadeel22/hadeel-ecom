@@ -1,3 +1,10 @@
+<?php
+
+    if(isset($_GET['err'])){
+        echo 'login error';
+    }
+?>
+
 <!DOCTYPE html>
 <!--
 Transit by TEMPLATED
@@ -16,6 +23,10 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 <script src="js/skel.min.js"></script>
 <script src="js/skel-layers.min.js"></script>
 <script src="js/init.js"></script>
+<script type="text/javascript">
+ 
+ 
+ </script>
 <noscript>
 <link rel="stylesheet" href="css/skel.css" />
 <link rel="stylesheet" href="css/style.css" />
@@ -23,6 +34,8 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 </noscript>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+ 
+
 body {font-family: Arial, Helvetica, sans-serif;}
 form {border: 3px solid #f1f1f1;}
 
